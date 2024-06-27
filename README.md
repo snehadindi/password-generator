@@ -35,15 +35,15 @@ To set up this project locally, follow these steps:
     cd password-generator
     ```
 
-3. Open the `password.html` file in your web browser:
+3. Open the `work.html` file in your web browser:
 
     ```bash
-    open password.html
+    open work.html
     ```
 
 ## Usage
 
-1. Open the `password.html` file in a web browser.
+1. Open the `work.html` file in a web browser.
 2. Click the "Generate Password" button.
 3. A random password will be displayed.
 
