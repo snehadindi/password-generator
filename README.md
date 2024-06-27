@@ -3,15 +3,10 @@
 This project is a simple web application that generates a random strong password. The password includes lowercase letters, uppercase letters, digits, and symbols to ensure high security.
 
 ## Table of Contents
-- [Demo](#demo)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-
-## Demo
-
-You can try out the live demo of the Random Password Generator [here](#).
 
 ## Features
 
