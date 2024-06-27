@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .password {
+            font-size: 24px;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Password Generator</h1>
+        <div class="password" id="password">Your password will appear here</div>
+        <button onclick="generatePassword()">Generate Password</button>
+    </div>
+
+    <script>
+        function generatePassword() {
+            function getRandomChar(min, max) {
+                return String.fromCharCode(Math.floor(Math.random() * (max - min + 1)) + min);
+            }
+
+            let low1 = getRandomChar(97, 122);
+            let low2 = getRandomChar(97, 122);
+            let upp1 = getRandomChar(65, 90);
+            let upp2 = getRandomChar(65, 90);
+            let int1 = getRandomChar(48, 57);
+            let int2 = getRandomChar(48, 57);
+            let sym1 = getRandomChar(33, 47);
+            let sym2 = getRandomChar(33, 47);
+
+            let password = low1 + low2 + upp1 + upp2 + int1 + int2 + sym1 + sym2;
+            let passwordArray = password.split('');
+            for (let i = passwordArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [passwordArray[i], passwordArray[j]] = [passwordArray[j], passwordArray[i]];
+            }
+            let shuffledPassword = passwordArray.join('');
+            document.getElementById('password').textContent = shuffledPassword;
+        }
+    </script>
+</body>
+</html>
